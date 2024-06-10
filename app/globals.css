@@ -4,8 +4,6 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,8 +24,13 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+main {
+  grid-template-areas: "sidebar main";
+  grid-template-columns: 250px 5fr;
+}
+
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-wrap: normal;
   }
 }
