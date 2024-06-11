@@ -1,11 +1,16 @@
 import { getItems } from '@/app/utils/getItems';
+import ItemsList from '@/app/items/components/ItemsList/ItemsList';
 
 export default async function Items() {
   const items = await getItems();
-  console.debug('[Items page] data ->', items[0]);
   return (
-    <div className="container flex  flex-col justify-between p-2">
-      <h1 className="h-1 text-2xl">Items list here </h1>
+    <div className="flex flex-col p-4">
+      <div className="flex">
+        <h1 className="w-full text-2xl">Items list here </h1>
+      </div>
+      <div className="flex">
+        <ItemsList items={items} />
+      </div>
     </div>
   );
 }

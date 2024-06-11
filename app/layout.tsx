@@ -24,7 +24,7 @@ export default function RootLayout({
           <Header />
           <main className="md:grid bg-white dark:bg-neutral-950 mt-14 gap-2 min-h-screen">
             <Sidebar />
-            <div className="flex md:mr-[250px]" style={{ gridArea: 'main' }}>
+            <div className="flex" style={{ gridArea: 'main' }}>
               {children}
             </div>
           </main>
