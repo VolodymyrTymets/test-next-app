@@ -14,7 +14,6 @@ const readFile = async (fileName: string) =>
 
 const readItems = () =>
   new Promise<Array<ItemType>>((resolveAll, rejectAll) => {
-    console.debug('-path--->', FIXTURE_PATH);
     fs.readdir(FIXTURE_PATH, (err, files) => {
       Promise.all(files.map(file => readFile(path.resolve(FIXTURE_PATH, file))))
         .then(resolveAll)
