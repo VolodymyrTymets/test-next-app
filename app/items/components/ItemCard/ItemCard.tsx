@@ -1,5 +1,6 @@
 import type { ItemType } from '@/app/types/item';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default async function ItemCard({ item }: { item: ItemType }) {
   return (
@@ -19,13 +20,13 @@ export default async function ItemCard({ item }: { item: ItemType }) {
 
       <div className="p-6">
         <div>
-          <a
-            href="#"
-            className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
+          <Link
+            href={`/items/${item._id}`}
+            className="mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
             role="link"
           >
             {item.title}
-          </a>
+          </Link>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             {item.description}
           </p>
@@ -41,13 +42,13 @@ export default async function ItemCard({ item }: { item: ItemType }) {
                 height={10}
                 alt="Avatar"
               />
-              <a
+              <Link
                 href="#"
                 className="mx-2 font-semibold text-gray-700 dark:text-gray-200"
                 role="link"
               >
                 {item.createdBy.firstName} {item.createdBy.lastName}
-              </a>
+              </Link>
             </div>
             <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">
               {`${new Date(item.createdAt).getDay()} / ${new Date(item.createdAt).getMonth()} / ${new Date(item.createdAt).getFullYear()}`}

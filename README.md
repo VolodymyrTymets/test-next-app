@@ -26,7 +26,7 @@ All UI components base on [tailwindcss](https://tailwindcss.com). Read documenta
 This project uses is used fixture data in json files. 
 All fixture is generating on _onAppStart if fixtures folder is empty.
 Based on [instrumentation](https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation) approach. 
-You can find all fixture files in `.next/server/_fixtures`.
+You can find all fixture files in `__fixtures__`.
 
 
 ## Deploy on Vercel
