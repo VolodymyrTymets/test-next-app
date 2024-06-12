@@ -11,7 +11,6 @@ import { SidebarContext } from '@/app/components/Sidebar/context';
 export default function Sidebar() {
   const { isOpen } = useContext(SidebarContext);
   const pathname = usePathname();
-  console.debug('--->', pathname);
   return (
     <aside
       className={classNames([
