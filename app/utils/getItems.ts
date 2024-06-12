@@ -5,15 +5,15 @@ import type { ItemType } from '@/app/types/item';
 
 const FIXTURE_PATH = path.resolve(process.cwd(), '__fixtures__');
 const readFile = async (fileName: string) =>
-  new Promise<ItemType>((resolve, reject) => {
+  new Promise<ItemType | null>((resolve) => {
     fs.readFile(fileName, 'utf8', (err, data) => {
-      if (err) throw reject(err);
+      if (err) throw resolve(null);
       resolve(JSON.parse(data));
     });
   });
 
 const readItems = () =>
-  new Promise<Array<ItemType>>((resolveAll, rejectAll) => {
+  new Promise<Array<ItemType | null>>((resolveAll, rejectAll) => {
     fs.readdir(FIXTURE_PATH, (err, files) => {
       Promise.all(files.map(file => readFile(path.resolve(FIXTURE_PATH, file))))
         .then(resolveAll)
