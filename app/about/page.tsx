@@ -1,3 +1,10 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Test Next App - About page',
+  description: 'About page',
+};
+
 export default function About() {
   return (
     <div className="container flex  flex-col justify-between p-2">

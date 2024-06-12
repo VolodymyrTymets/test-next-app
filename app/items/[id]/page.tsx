@@ -1,8 +1,19 @@
+import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 import { getItem } from '@/app/utils/getItems';
 import Image from 'next/image';
 import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
+
+export const metadata: Metadata = {
+  title: 'Test Next App - Single item page',
+  description: 'Single item page',
+};
+
 export default async function Item({ params }: { params: { id: string } }) {
   const item = await getItem(params.id);
+  if (!item) {
+    notFound();
+  }
   return (
     <div className="flex flex-col p-4">
       <div className="flex">

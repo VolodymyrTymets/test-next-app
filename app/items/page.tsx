@@ -1,9 +1,16 @@
+import { Metadata } from 'next';
 import { getItems } from '@/app/utils/getItems';
 import ItemsList from '@/app/items/components/ItemsList/ItemsList';
 import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
 import Pagination from '@/app/components/Pagination/Pagination';
 
 const PER_PAGE = 9;
+
+export const metadata: Metadata = {
+  title: 'Test Next App - List of items',
+  description: 'List of items ',
+};
+
 export default async function Items({
   searchParams,
 }: {
