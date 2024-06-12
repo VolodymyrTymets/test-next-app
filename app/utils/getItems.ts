@@ -24,6 +24,12 @@ const readItems = () =>
 const readItem = (id: string) =>
   readFile(path.resolve(FIXTURE_PATH, `item-${id}.json`));
 
-export const getItems = cache(async () => await readItems());
+export const getItems = cache(async (skip = 0, limit = 10) => {
+  const items = await readItems();
+  return {
+    items: items.slice(skip, limit),
+    totalCount: items.length,
+  };
+});
 
 export const getItem = cache(async (id: string) => await readItem(id));

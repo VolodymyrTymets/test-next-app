@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import HomeIcon from '@/app/components/icons/HomeIcon/HomeIcon';
-export default async function Breadcrumbs({
+export default function Breadcrumbs({
   items = [],
 }: {
   items?: Array<{ link?: string; title: string }>;
