@@ -3,7 +3,7 @@ import fs from 'fs';
 import { cache } from 'react';
 import type { ItemType } from '@/app/types/item';
 
-const FIXTURE_PATH = path.resolve(__dirname, '../..', '_fixtures');
+const FIXTURE_PATH = path.resolve(process.cwd(), '__fixtures__');
 const readFile = async (fileName: string) =>
   new Promise<ItemType>((resolve, reject) => {
     fs.readFile(fileName, 'utf8', (err, data) => {

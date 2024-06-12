@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import { faker } from '@faker-js/faker';
 
-const FIXTURE_PATH = path.resolve(__dirname, '_fixtures');
+const FIXTURE_PATH = path.resolve(process.cwd(), '__fixtures__');
 const COUNT_OF_ITEMS = 100;
 
 const createFixture = () =>
